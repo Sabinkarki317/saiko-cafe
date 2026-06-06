@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Saiko Cafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 30 L 25 70 Q 25 80 35 80 L 65 80 Q 75 80 75 70 L 80 30 Z" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 20 30 L 80 30" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 80 40 Q 95 40 95 55 Q 95 70 80 70" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 35 20 Q 35 10 40 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 50 20 Q 50 10 55 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 65 20 Q 65 10 70 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="50" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4513">SAIKO</text>
+                </svg>
+                <span class="cafe-name">SAIKO CAFE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="admin.html" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-page">
+        <div class="container">
+            <h1>Contact Us</h1>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="info-box">
+                        <h3>📍 Location</h3>
+                        <p>Saiko Cafe<br>
+                        Kathmandu, Nepal<br>
+                        (Update with your actual address)</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📞 Phone</h3>
+                        <p><a href="tel:+977-XXXXXXXXXX">+977-1-XXXXXXXXXX</a><br>
+                        (Update with your phone number)</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:info@saikocafe.com">info@saikocafe.com</a><br>
+                        (Update with your email)</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>🕐 Hours</h3>
+                        <p>Monday - Friday: 7:00 AM - 10:00 PM<br>
+                        Saturday - Sunday: 8:00 AM - 11:00 PM</p>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Follow Us</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-btn">Facebook</a>
+                            <a href="#" class="social-btn">Instagram</a>
+                            <a href="#" class="social-btn">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Saiko Cafe</h3>
+                    <p>Premium Nepali Cuisine & Coffee</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Saiko Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

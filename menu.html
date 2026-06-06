@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Saiko Cafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 30 L 25 70 Q 25 80 35 80 L 65 80 Q 75 80 75 70 L 80 30 Z" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 20 30 L 80 30" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 80 40 Q 95 40 95 55 Q 95 70 80 70" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 35 20 Q 35 10 40 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 50 20 Q 50 10 55 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 65 20 Q 65 10 70 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="50" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4513">SAIKO</text>
+                </svg>
+                <span class="cafe-name">SAIKO CAFE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link admin-link">Admin</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Page -->
+    <section class="menu-page">
+        <div class="container">
+            <h1>Our Menu</h1>
+            
+            <!-- Search and Filter -->
+            <div class="menu-controls">
+                <input type="text" id="searchInput" class="search-box" placeholder="Search menu items...">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="coffee">Coffee</button>
+                    <button class="filter-btn" data-filter="drinks">Drinks</button>
+                    <button class="filter-btn" data-filter="nepali-food">Nepali Food</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-items" class="menu-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Item Details Modal -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Item" class="modal-image">
+                <div class="modal-details">
+                    <h2 id="modalName"></h2>
+                    <p class="modal-category" id="modalCategory"></p>
+                    <p id="modalDescription"></p>
+                    <div class="modal-price-section">
+                        <span class="modal-price" id="modalPrice"></span>
+                    </div>
+                    <button class="btn btn-primary" id="orderBtn">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Saiko Cafe</h3>
+                    <p>Premium Nepali Cuisine & Coffee</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Saiko Cafe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
