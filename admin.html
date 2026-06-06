@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Saiko Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 30 L 25 70 Q 25 80 35 80 L 65 80 Q 75 80 75 70 L 80 30 Z" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 20 30 L 80 30" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 80 40 Q 95 40 95 55 Q 95 70 80 70" fill="none" stroke="#8B4513" stroke-width="2"/>
+                    <path d="M 35 20 Q 35 10 40 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 50 20 Q 50 10 55 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M 65 20 Q 65 10 70 5" fill="none" stroke="#D2691E" stroke-width="1.5" stroke-linecap="round"/>
+                    <text x="50" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4513">SAIKO</text>
+                </svg>
+                <span class="cafe-name">SAIKO CAFE - ADMIN</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="admin.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="#" id="logoutBtn" class="nav-link logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form (shown initially) -->
+    <div id="loginSection" class="login-section">
+        <div class="login-container">
+            <h1>Admin Login</h1>
+            <div class="login-box">
+                <p class="login-hint">Enter the admin PIN to access the dashboard.</p>
+                <input type="password" id="adminPin" placeholder="Enter Admin PIN" class="admin-input">
+                <button id="loginBtn" class="btn btn-primary">Login</button>
+                <div id="loginMessage" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (shown after login) -->
+    <div id="dashboardSection" class="admin-dashboard" style="display: none;">
+        <div class="admin-container">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage your cafe menu items</p>
+            </div>
+
+            <!-- Add New Item Section -->
+            <section class="add-item-section">
+                <h2>Add New Menu Item</h2>
+                <form id="addItemForm" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Item Name *</label>
+                            <input type="text" id="itemName" placeholder="e.g., Cappuccino" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Category *</label>
+                            <select id="itemCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="coffee">Coffee</option>
+                                <option value="drinks">Drinks</option>
+                                <option value="nepali-food">Nepali Food</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Price (NPR) *</label>
+                            <input type="number" id="itemPrice" placeholder="150" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL or Upload</label>
+                            <input type="file" id="itemImage" accept="image/*">
+                            <small>Or paste image URL:</small>
+                            <input type="text" id="itemImageUrl" placeholder="https://...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description *</label>
+                        <textarea id="itemDescription" placeholder="Describe this item..." rows="3" required></textarea>
+                    </div>
+
+                    <div id="imagePreview" class="image-preview" style="display: none;">
+                        <img id="previewImg" src="" alt="Preview">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Item</button>
+                </form>
+                <div id="addMessage" class="message"></div>
+            </section>
+
+            <!-- Menu Items List -->
+            <section class="manage-items-section">
+                <h2>Menu Items</h2>
+                
+                <div class="manage-controls">
+                    <input type="text" id="manageSearch" class="search-box" placeholder="Search items...">
+                    <select id="manageFilter" class="filter-select">
+                        <option value="">All Categories</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="nepali-food">Nepali Food</option>
+                    </select>
+                </div>
+
+                <div id="itemsList" class="admin-items-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Edit Item Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content admin-modal">
+            <span class="close">&times;</span>
+            <h2>Edit Menu Item</h2>
+            <form id="editItemForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Item Name *</label>
+                        <input type="text" id="editItemName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="editItemCategory" required>
+                            <option value="coffee">Coffee</option>
+                            <option value="drinks">Drinks</option>
+                            <option value="nepali-food">Nepali Food</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (NPR) *</label>
+                        <input type="number" id="editItemPrice" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="editItemDescription" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Image URL</label>
+                    <input type="file" id="editItemImage" accept="image/*">
+                    <small>Or update image URL:</small>
+                    <input type="text" id="editItemImageUrl" placeholder="https://...">
+                </div>
+
+                <div id="editImagePreview" class="image-preview" style="display: none;">
+                    <img id="editPreviewImg" src="" alt="Preview">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Item</button>
+            </form>
+            <div id="editMessage" class="message"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Saiko Cafe Admin Panel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
